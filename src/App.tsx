@@ -35,12 +35,12 @@ const App = () => {
   };
 
   return (
-    <div className="container">
-      <div className="header">
+    <main>
+      <header>
         <VtexLogo className="logo" />
         <h1>URL Slug Builder</h1>
-      </div>
-      <div className="module">
+      </header>
+      <section>
         <div className="input-container">
           {inputs.map((input, index) => (
             <div key={index} className="input-row">
@@ -54,7 +54,6 @@ const App = () => {
               {Boolean(input) && (
                 <button
                   onClick={removeInputField(index)}
-                  // disabled={inputs.length === 1}
                   className="square-button"
                   aria-label="Remove"
                 >
@@ -65,10 +64,10 @@ const App = () => {
           ))}
         </div>
         <button onClick={addInputField} className="full-width" disabled={!inputs[inputs.length - 1]}>
-          + Another one
+          + Add another
         </button>
-      </div>
-      <div className="module">
+      </section>
+      <section>
         <div className={`output ${Boolean(output) ? "" : "placeholder"}`}>
           {output}
         </div>
@@ -79,8 +78,8 @@ const App = () => {
         >
           Copy to Clipboard
         </button>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 
