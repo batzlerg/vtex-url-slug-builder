@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { slugify } from "./utils";
 import VtexLogo from "./VtexLogo";
+import { useUrlState } from "./useUrlState";
+import "./index.css";
 
 const App = () => {
-  const [inputs, setInputs] = useState<string[]>([""]);
+  const [inputs, setInputs] = useUrlState([""]);
   const [output, setOutput] = useState("");
 
   const handleInputChange =
