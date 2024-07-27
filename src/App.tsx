@@ -16,6 +16,13 @@ const App = () => {
       updateOutput(newInputs);
     };
 
+  const handleKeyDown =
+    (index: number) => (e: React.KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === "Enter") {
+        addInputField();
+      }
+    };
+
   const addInputField = () => {
     setInputs([...inputs, ""]);
   };
@@ -50,6 +57,7 @@ const App = () => {
                 type="text"
                 value={input}
                 onChange={handleInputChange(index)}
+                onKeyDown={handleKeyDown(index)}
                 placeholder="Add a category, collection, or product title"
                 className="input-field"
               />
